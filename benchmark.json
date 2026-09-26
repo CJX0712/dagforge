@@ -1,0 +1,166 @@
+{
+  "system": "DagForge",
+  "version": "0.1.0",
+  "author": "晨星",
+  "seed": 42,
+  "generated_at": "2026-09-27 06:12:53",
+  "config": {
+    "seed": 42,
+    "use_sota": true,
+    "n_graphs": 8,
+    "n_nodes": 12,
+    "edge_prob": 0.3,
+    "n_samples": 800,
+    "sem_noise": 1.0,
+    "notears_lambda": 0.1,
+    "notears_rho_init": 1.0,
+    "notears_max_iter": 60,
+    "notears_inner_iter": 100,
+    "notears_lr": 0.02,
+    "notears_h_tol": 1e-06,
+    "notears_w_threshold": 0.2,
+    "pc_alpha": 0.05,
+    "pc_max_cond": 3,
+    "corr_threshold": 0.3,
+    "n_bootstrap": 0
+  },
+  "backends_available": {
+    "causal_learn": true,
+    "gcastle": false
+  },
+  "datasets": [
+    {
+      "name": "g00",
+      "n_nodes": 12,
+      "n_edges_true": 11,
+      "n_samples": 800
+    },
+    {
+      "name": "g01",
+      "n_nodes": 12,
+      "n_edges_true": 18,
+      "n_samples": 800
+    },
+    {
+      "name": "g02",
+      "n_nodes": 12,
+      "n_edges_true": 19,
+      "n_samples": 800
+    },
+    {
+      "name": "g03",
+      "n_nodes": 12,
+      "n_edges_true": 16,
+      "n_samples": 800
+    },
+    {
+      "name": "g04",
+      "n_nodes": 12,
+      "n_edges_true": 15,
+      "n_samples": 800
+    },
+    {
+      "name": "g05",
+      "n_nodes": 12,
+      "n_edges_true": 15,
+      "n_samples": 800
+    },
+    {
+      "name": "g06",
+      "n_nodes": 12,
+      "n_edges_true": 14,
+      "n_samples": 800
+    },
+    {
+      "name": "g07",
+      "n_nodes": 12,
+      "n_edges_true": 11,
+      "n_samples": 800
+    }
+  ],
+  "methods": {
+    "empty": {
+      "shd_mean": 20.875,
+      "shd_std": 2.7128168017763383,
+      "precision_mean": 0.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.0,
+      "f1_std": 0.0,
+      "fdr_mean": 0.0,
+      "fdr_std": 0.0,
+      "elapsed_mean": 4.249998710292857e-06
+    },
+    "corr_threshold": {
+      "shd_mean": 21.875,
+      "shd_std": 4.399928976699511,
+      "precision_mean": 0.4875776733135604,
+      "precision_std": 0.06033034480149378,
+      "recall_mean": 0.8034519034886682,
+      "recall_std": 0.08897213409084964,
+      "f1_mean": 0.6045166423184326,
+      "f1_std": 0.062039975945314255,
+      "fdr_mean": 0.5124223266864396,
+      "fdr_std": 0.060330344801493796,
+      "elapsed_mean": 0.0002661749977050931
+    },
+    "pc": {
+      "shd_mean": 13.375,
+      "shd_std": 4.240798863421843,
+      "precision_mean": 0.6547029035276318,
+      "precision_std": 0.07925958430222943,
+      "recall_mean": 0.790723516679399,
+      "recall_std": 0.08127807217164895,
+      "f1_mean": 0.7150166748274791,
+      "f1_std": 0.07534866602624014,
+      "fdr_mean": 0.34529709647236817,
+      "fdr_std": 0.07925958430222942,
+      "elapsed_mean": 0.03498427499926038
+    },
+    "notears_lin": {
+      "shd_mean": 1.125,
+      "shd_std": 1.165922381636102,
+      "precision_mean": 0.9886133603238867,
+      "precision_std": 0.02003786583699836,
+      "recall_mean": 0.9578932709447416,
+      "recall_std": 0.049507003282387135,
+      "f1_mean": 0.9723398402730801,
+      "f1_std": 0.029380850348211727,
+      "fdr_mean": 0.01138663967611336,
+      "fdr_std": 0.02003786583699835,
+      "elapsed_mean": 0.1679934374988079
+    },
+    "cl_pc": {
+      "shd_mean": 8.125,
+      "shd_std": 4.3714271125114275,
+      "precision_mean": 0.8978247549019609,
+      "precision_std": 0.09070063458608771,
+      "recall_mean": 0.6981100394703337,
+      "recall_std": 0.13624809749788194,
+      "f1_mean": 0.782636468783607,
+      "f1_std": 0.11236811477048395,
+      "fdr_mean": 0.10217524509803921,
+      "fdr_std": 0.09070063458608772,
+      "elapsed_mean": 0.0
+    }
+  },
+  "headline": {
+    "flagship": "notears_lin",
+    "baseline": "corr_threshold",
+    "baseline_shd_mean": 21.875,
+    "flagship_shd_mean": 1.125,
+    "shd_reduction_pct": 94.85714285714286,
+    "f1_gain": 0.36782319795464746,
+    "beat_baseline": true,
+    "s_bar_satisfied": true,
+    "cross_validation": [
+      {
+        "sota_method": "cl_pc",
+        "ours_method": "pc",
+        "shd_diff": 5.25,
+        "matches_reference": true
+      }
+    ]
+  }
+}

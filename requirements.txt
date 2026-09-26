@@ -1,0 +1,23 @@
+# DagForge 运行时依赖（核心，零可选后端即可完整运行）
+# 作者：晨星 | 仓库：cjx0712/dagforge
+# Python 3.13 | 全部为已验证锁定版本，详见 requirements.lock.txt
+
+# --- 核心数值栈（必需） ---
+numpy==2.5.3
+scipy==1.18.1
+pandas==3.0.6
+networkx==3.7          # DAG 结构工具与可视化辅助
+tqdm==4.70.1           # 进度条（PC 算法）
+
+# --- 可选 SOTA 后端（缺省时自动降级，不影响核心功能） ---
+# causal-learn 提供 PC 算法的独立交叉验证参照实现（已验证可用）。
+causal-learn==0.1.4.8
+
+# gcastle 提供 NOTEARS 的官方实现参照，但其依赖 torch。
+# 本环境未安装 torch，available_gcastle() 会探测失败并优雅跳过；
+# 系统旗舰方法为自研纯 numpy/scipy 实现，不依赖 gcastle。
+# 若需启用 gcastle 后端，请额外安装：pip install torch  (CPU 版即可)
+# gcastle==1.0.4
+
+# --- 开发 / 测试（make test 需要） ---
+pytest==9.1.1

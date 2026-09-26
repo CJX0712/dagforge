@@ -1,0 +1,28 @@
+# DagForge .gitignore  | 作者：晨星
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# 虚拟环境
+.venv/
+venv/
+env/
+
+# 测试 / 覆盖率
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# 运行产物（二次校验副本，非源码）
+benchmark_run2.json
+
+# 编辑器 / OS
+.idea/
+.vscode/
+.DS_Store
